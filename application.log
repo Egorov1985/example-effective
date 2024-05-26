@@ -1,0 +1,81 @@
+2024-05-27 00:09:57  INFO 2080 --- [effective-example] [main] r.e.e.EffectiveExampleApplication        : Starting EffectiveExampleApplication using Java 17.0.10 with PID 2080 (C:\Users\saneg\Downloads\example-effective\target\classes started by saneg in C:\Users\saneg\Downloads\example-effective)
+2024-05-27 00:09:57  INFO 2080 --- [effective-example] [main] r.e.e.EffectiveExampleApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-05-27 00:09:58  INFO 2080 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-27 00:09:59  INFO 2080 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 118 ms. Found 5 JPA repository interfaces.
+2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2881 ms
+2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
+2024-05-27 00:10:00  WARN 2080 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.037s)
+2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@335b3d6
+2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-27 00:10:03  INFO 2080 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-27 00:10:03  INFO 2080 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 00:10:04  INFO 2080 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
+2024-05-27 00:10:04  INFO 2080 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-27 00:10:05  WARN 2080 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-27 00:10:06  INFO 2080 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d81bc79, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c9dcfcd, org.springframework.security.web.context.SecurityContextHolderFilter@4299b47d, org.springframework.security.web.header.HeaderWriterFilter@7f55e1b9, org.springframework.web.filter.CorsFilter@4431233f, org.springframework.security.web.authentication.logout.LogoutFilter@2afdab87, ru.egorov.effectiveexample.jwt.filter.JwtFilter@73bb1337, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d6c4c43, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5cb9ef8a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@201ac0ef, org.springframework.security.web.session.SessionManagementFilter@7a6ef10b, org.springframework.security.web.access.ExceptionTranslationFilter@abce494, org.springframework.security.web.access.intercept.AuthorizationFilter@54a0ada1]
+2024-05-27 00:10:06  INFO 2080 --- [effective-example] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-27 00:10:06  INFO 2080 --- [effective-example] [main] r.e.e.EffectiveExampleApplication        : Started EffectiveExampleApplication in 10.212 seconds (process running for 11.689)
+2024-05-27 00:10:06  INFO 2080 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
+2024-05-27 00:10:12  INFO 2080 --- [effective-example] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-27 00:10:12  INFO 2080 --- [effective-example] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-27 00:10:12  INFO 2080 --- [effective-example] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-27 00:10:39  INFO 2080 --- [effective-example] [http-nio-8080-exec-7] r.e.e.service.DepositServiceServiceImp   : Перевод завершился неудачей!
+2024-05-27 00:11:23  INFO 2080 --- [effective-example] [http-nio-8080-exec-9] r.e.e.service.DepositServiceServiceImp   : Пользователь login1 успешно перевел пользователю номером телефона 9271409752 денежные средтсва в размере 1000.0руб.
+2024-05-27 00:13:11  INFO 2080 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 00:13:11  INFO 2080 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-27 00:13:11  INFO 2080 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-27 00:13:23  INFO 10676 --- [effective-example] [main] r.e.e.EffectiveExampleApplication        : Starting EffectiveExampleApplication using Java 17.0.10 with PID 10676 (C:\Users\saneg\Downloads\example-effective\target\classes started by saneg in C:\Users\saneg\Downloads\example-effective)
+2024-05-27 00:13:23  INFO 10676 --- [effective-example] [main] r.e.e.EffectiveExampleApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-05-27 00:13:25  INFO 10676 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-27 00:13:25  INFO 10676 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 5 JPA repository interfaces.
+2024-05-27 00:13:26  INFO 10676 --- [effective-example] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-27 00:13:26  INFO 10676 --- [effective-example] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-27 00:13:26  INFO 10676 --- [effective-example] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-27 00:13:26  INFO 10676 --- [effective-example] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-27 00:13:26  INFO 10676 --- [effective-example] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3045 ms
+2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
+2024-05-27 00:13:27  WARN 10676 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.041s)
+2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6dbb3d7d
+2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-27 00:13:31  INFO 10676 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-27 00:13:31  INFO 10676 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 00:13:31  INFO 10676 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
+2024-05-27 00:13:31  INFO 10676 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-27 00:13:32  WARN 10676 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-27 00:13:33  INFO 10676 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@75eed00f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ae729fb, org.springframework.security.web.context.SecurityContextHolderFilter@8dbe78f, org.springframework.security.web.header.HeaderWriterFilter@41a56594, org.springframework.web.filter.CorsFilter@5513982, org.springframework.security.web.authentication.logout.LogoutFilter@2e6c69f, ru.egorov.effectiveexample.jwt.filter.JwtFilter@5600a5da, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17ed6578, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@351623d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22351330, org.springframework.security.web.session.SessionManagementFilter@42ffabb, org.springframework.security.web.access.ExceptionTranslationFilter@3c2e7a83, org.springframework.security.web.access.intercept.AuthorizationFilter@669f2128]
+2024-05-27 00:13:34  INFO 10676 --- [effective-example] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-27 00:13:34  INFO 10676 --- [effective-example] [main] r.e.e.EffectiveExampleApplication        : Started EffectiveExampleApplication in 11.354 seconds (process running for 13.514)
+2024-05-27 00:13:34  INFO 10676 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
+2024-05-27 00:13:38  INFO 10676 --- [effective-example] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-27 00:13:38  INFO 10676 --- [effective-example] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-27 00:13:38  INFO 10676 --- [effective-example] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-05-27 00:13:39  INFO 10676 --- [effective-example] [http-nio-8080-exec-2] r.e.e.service.DepositServiceServiceImp   : Нельзя первести больше чем на счету!
+2024-05-27 00:14:29  INFO 10676 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 00:14:29  INFO 10676 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-27 00:14:29  INFO 10676 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

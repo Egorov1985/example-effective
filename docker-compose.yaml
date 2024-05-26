@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  postgres_db:
+    image: bitnami/postgresql:16.3.0
+    container_name: PostgresDB
+    restart: always
+    environment:
+     POSTGRESQL_DATABASE: postgresDB
+     POSTGRESQL_USERNAME: postgres
+     POSTGRESQL_PASSWORD: postgres123
+    ports:
+     - '5432:5432'
+    volumes:
+     - postgres_db:/var/lib/postgresql/data
+volumes:
+  postgres_db:
+  redis_data:
+   driver: local
+
