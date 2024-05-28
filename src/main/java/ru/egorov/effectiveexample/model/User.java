@@ -18,6 +18,7 @@ import java.util.List;
 @Data
 @Table(name = "users")
 @Schema(description = "Entity for user.")
+@Builder
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

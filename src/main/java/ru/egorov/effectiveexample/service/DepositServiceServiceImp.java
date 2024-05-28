@@ -34,16 +34,17 @@ public class DepositServiceServiceImp implements DepositService {
     public boolean transferMoneyToUser(String login, String numberPhone, Double depositTransfer) {
         User userFrom = userRepository.findUserByLogin(login).orElseThrow(()
                 -> new UserNotFoundException("User not found!"));
-        BankAccount accountFromTransfer = bankAccountRepository.findById(userFrom.getId()).orElseThrow();
+        BankAccount accountFromTransfer = bankAccountRepository.
+                findById(userFrom.getId()).orElseThrow();
         BankAccount accountToTransfer = bankAccountRepository.findById(
                         phoneRepository.getIdFromNumberPhone(numberPhone).orElseThrow(() ->
-                                new UserNotFoundException("Пользователь с таким номером не зарегистрирован.")))
-                .orElseThrow();
+                                new UserNotFoundException("Пользователь c указанным номером" +
+                                        "телефона не найден!"))).orElseThrow();
         if (accountToTransfer.equals(accountFromTransfer)) {
             throw new ResourceException("Нельзя переводить самому себе!");
         }
 
-        if (depositTransfer <= accountFromTransfer.getDeposit()) {
+        if (depositTransfer <= accountFromTransfer.getDeposit() && depositTransfer!= 0) {
             accountFromTransfer.setDeposit(accountFromTransfer.getDeposit() - depositTransfer);
             accountToTransfer.setDeposit(accountToTransfer.getDeposit() + depositTransfer);
 

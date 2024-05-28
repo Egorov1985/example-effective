@@ -1,81 +1,456 @@
-2024-05-27 00:09:57  INFO 2080 --- [effective-example] [main] r.e.e.EffectiveExampleApplication        : Starting EffectiveExampleApplication using Java 17.0.10 with PID 2080 (C:\Users\saneg\Downloads\example-effective\target\classes started by saneg in C:\Users\saneg\Downloads\example-effective)
-2024-05-27 00:09:57  INFO 2080 --- [effective-example] [main] r.e.e.EffectiveExampleApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-05-27 00:09:58  INFO 2080 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-27 00:09:59  INFO 2080 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 118 ms. Found 5 JPA repository interfaces.
-2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2881 ms
-2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
-2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
-2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
-2024-05-27 00:10:00  INFO 2080 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
-2024-05-27 00:10:00  WARN 2080 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.037s)
-2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
-2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
-2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@335b3d6
-2024-05-27 00:10:01  INFO 2080 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-27 00:10:03  INFO 2080 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-27 00:10:03  INFO 2080 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-27 00:10:04  INFO 2080 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
-2024-05-27 00:10:04  INFO 2080 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-05-27 00:10:05  WARN 2080 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-27 00:10:06  INFO 2080 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d81bc79, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c9dcfcd, org.springframework.security.web.context.SecurityContextHolderFilter@4299b47d, org.springframework.security.web.header.HeaderWriterFilter@7f55e1b9, org.springframework.web.filter.CorsFilter@4431233f, org.springframework.security.web.authentication.logout.LogoutFilter@2afdab87, ru.egorov.effectiveexample.jwt.filter.JwtFilter@73bb1337, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d6c4c43, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5cb9ef8a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@201ac0ef, org.springframework.security.web.session.SessionManagementFilter@7a6ef10b, org.springframework.security.web.access.ExceptionTranslationFilter@abce494, org.springframework.security.web.access.intercept.AuthorizationFilter@54a0ada1]
-2024-05-27 00:10:06  INFO 2080 --- [effective-example] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-05-27 00:10:06  INFO 2080 --- [effective-example] [main] r.e.e.EffectiveExampleApplication        : Started EffectiveExampleApplication in 10.212 seconds (process running for 11.689)
-2024-05-27 00:10:06  INFO 2080 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
-2024-05-27 00:10:12  INFO 2080 --- [effective-example] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-27 00:10:12  INFO 2080 --- [effective-example] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-05-27 00:10:12  INFO 2080 --- [effective-example] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-05-27 00:10:39  INFO 2080 --- [effective-example] [http-nio-8080-exec-7] r.e.e.service.DepositServiceServiceImp   : Перевод завершился неудачей!
-2024-05-27 00:11:23  INFO 2080 --- [effective-example] [http-nio-8080-exec-9] r.e.e.service.DepositServiceServiceImp   : Пользователь login1 успешно перевел пользователю номером телефона 9271409752 денежные средтсва в размере 1000.0руб.
-2024-05-27 00:13:11  INFO 2080 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-27 00:13:11  INFO 2080 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-27 00:13:11  INFO 2080 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-05-27 00:13:23  INFO 10676 --- [effective-example] [main] r.e.e.EffectiveExampleApplication        : Starting EffectiveExampleApplication using Java 17.0.10 with PID 10676 (C:\Users\saneg\Downloads\example-effective\target\classes started by saneg in C:\Users\saneg\Downloads\example-effective)
-2024-05-27 00:13:23  INFO 10676 --- [effective-example] [main] r.e.e.EffectiveExampleApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-05-27 00:13:25  INFO 10676 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-27 00:13:25  INFO 10676 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 5 JPA repository interfaces.
-2024-05-27 00:13:26  INFO 10676 --- [effective-example] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-05-27 00:13:26  INFO 10676 --- [effective-example] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-27 00:13:26  INFO 10676 --- [effective-example] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-27 00:13:26  INFO 10676 --- [effective-example] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-27 00:13:26  INFO 10676 --- [effective-example] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3045 ms
-2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
-2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
-2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
-2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
-2024-05-27 00:13:27  WARN 10676 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
-2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.041s)
-2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
-2024-05-27 00:13:27  INFO 10676 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
-2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6dbb3d7d
-2024-05-27 00:13:28  INFO 10676 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-27 00:13:31  INFO 10676 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-27 00:13:31  INFO 10676 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-27 00:13:31  INFO 10676 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
-2024-05-27 00:13:31  INFO 10676 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-05-27 00:13:32  WARN 10676 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-27 00:13:33  INFO 10676 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@75eed00f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ae729fb, org.springframework.security.web.context.SecurityContextHolderFilter@8dbe78f, org.springframework.security.web.header.HeaderWriterFilter@41a56594, org.springframework.web.filter.CorsFilter@5513982, org.springframework.security.web.authentication.logout.LogoutFilter@2e6c69f, ru.egorov.effectiveexample.jwt.filter.JwtFilter@5600a5da, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17ed6578, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@351623d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22351330, org.springframework.security.web.session.SessionManagementFilter@42ffabb, org.springframework.security.web.access.ExceptionTranslationFilter@3c2e7a83, org.springframework.security.web.access.intercept.AuthorizationFilter@669f2128]
-2024-05-27 00:13:34  INFO 10676 --- [effective-example] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-05-27 00:13:34  INFO 10676 --- [effective-example] [main] r.e.e.EffectiveExampleApplication        : Started EffectiveExampleApplication in 11.354 seconds (process running for 13.514)
-2024-05-27 00:13:34  INFO 10676 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
-2024-05-27 00:13:38  INFO 10676 --- [effective-example] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-27 00:13:38  INFO 10676 --- [effective-example] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-05-27 00:13:38  INFO 10676 --- [effective-example] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-05-27 00:13:39  INFO 10676 --- [effective-example] [http-nio-8080-exec-2] r.e.e.service.DepositServiceServiceImp   : Нельзя первести больше чем на счету!
-2024-05-27 00:14:29  INFO 10676 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-27 00:14:29  INFO 10676 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-27 00:14:29  INFO 10676 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-28 15:53:19  INFO 8812 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Starting EffectiveExampleApplicationTests using Java 17.0.9 with PID 8812 (started by Александр in C:\Users\Александр\IdeaProjects\example-effective)
+2024-05-28 15:53:19  INFO 8812 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-05-28 15:53:23  INFO 8812 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-28 15:53:23  INFO 8812 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 184 ms. Found 5 JPA repository interfaces.
+2024-05-28 15:53:26  INFO 8812 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-05-28 15:53:26  INFO 8812 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-28 15:53:26  INFO 8812 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-28 15:53:26  INFO 8812 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
+2024-05-28 15:53:26  WARN 8812 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-05-28 15:53:26  INFO 8812 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.099s)
+2024-05-28 15:53:26  INFO 8812 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-05-28 15:53:26  INFO 8812 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-28 15:53:26  INFO 8812 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-28 15:53:27  INFO 8812 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-28 15:53:27  INFO 8812 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-28 15:53:27  INFO 8812 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-28 15:53:28  INFO 8812 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-28 15:53:28  INFO 8812 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@8debe42
+2024-05-28 15:53:28  INFO 8812 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-28 15:53:31  INFO 8812 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-28 15:53:31  INFO 8812 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 15:53:31  INFO 8812 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
+2024-05-28 15:53:32  INFO 8812 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-28 15:53:34  WARN 8812 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-28 15:53:34  INFO 8812 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6705b98b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7324d83, org.springframework.security.web.context.SecurityContextHolderFilter@62910d16, org.springframework.security.web.header.HeaderWriterFilter@ad7d724, org.springframework.web.filter.CorsFilter@370bd951, org.springframework.security.web.authentication.logout.LogoutFilter@601e465f, ru.egorov.effectiveexample.jwt.filter.JwtFilter@54f62ac6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d066f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c39ec34, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c4da654, org.springframework.security.web.session.SessionManagementFilter@1e680c92, org.springframework.security.web.access.ExceptionTranslationFilter@22265a8d, org.springframework.security.web.access.intercept.AuthorizationFilter@2ce987d7]
+2024-05-28 15:53:36  INFO 8812 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Started EffectiveExampleApplicationTests in 17.511 seconds (process running for 20.19)
+2024-05-28 15:53:36  INFO 8812 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
+2024-05-28 15:53:38  WARN 8812 --- [effective-example] [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener] to prepare test instance [ru.egorov.effectiveexample.EffectiveExampleApplicationTests@60ffdc9f]
+
+org.mockito.exceptions.base.MockitoException: 
+Cannot mock/spy class java.lang.String
+Mockito cannot mock/spy because :
+ - Cannot mock wrapper types, String.class or Class.class
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.initMocks(MockitoTestExecutionListener.java:88) ~[spring-boot-test-3.2.5.jar:3.2.5]
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:62) ~[spring-boot-test-3.2.5.jar:3.2.5]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260) ~[spring-test-6.1.6.jar:6.1.6]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163) ~[spring-test-6.1.6.jar:6.1.6]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310) ~[na:na]
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735) ~[na:na]
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57) ~[junit5-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55) ~[junit-rt.jar:na]
+
+2024-05-28 15:53:38  INFO 8812 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 15:53:38  INFO 8812 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-28 15:53:38  INFO 8812 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-28 15:54:16  INFO 12172 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Starting EffectiveExampleApplicationTests using Java 17.0.9 with PID 12172 (started by Александр in C:\Users\Александр\IdeaProjects\example-effective)
+2024-05-28 15:54:16  INFO 12172 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-05-28 15:54:18  INFO 12172 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-28 15:54:19  INFO 12172 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 174 ms. Found 5 JPA repository interfaces.
+2024-05-28 15:54:21  INFO 12172 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-05-28 15:54:21  INFO 12172 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-28 15:54:21  INFO 12172 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-28 15:54:21  INFO 12172 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
+2024-05-28 15:54:21  WARN 12172 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-05-28 15:54:21  INFO 12172 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.089s)
+2024-05-28 15:54:21  INFO 12172 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-05-28 15:54:21  INFO 12172 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-28 15:54:22  INFO 12172 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-28 15:54:22  INFO 12172 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-28 15:54:22  INFO 12172 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-28 15:54:23  INFO 12172 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-28 15:54:23  INFO 12172 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-28 15:54:23  INFO 12172 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4fd37449
+2024-05-28 15:54:23  INFO 12172 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-28 15:54:26  INFO 12172 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-28 15:54:26  INFO 12172 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 15:54:26  INFO 12172 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
+2024-05-28 15:54:27  INFO 12172 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-28 15:54:28  WARN 12172 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-28 15:54:29  INFO 12172 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1f94df5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56972302, org.springframework.security.web.context.SecurityContextHolderFilter@7ef9c234, org.springframework.security.web.header.HeaderWriterFilter@52072c45, org.springframework.web.filter.CorsFilter@4a244aa3, org.springframework.security.web.authentication.logout.LogoutFilter@7e4f42c0, ru.egorov.effectiveexample.jwt.filter.JwtFilter@2cdb53d6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33c9910e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40ea5cd3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f491bd2, org.springframework.security.web.session.SessionManagementFilter@402cdec9, org.springframework.security.web.access.ExceptionTranslationFilter@73eb57e6, org.springframework.security.web.access.intercept.AuthorizationFilter@7ec53f8f]
+2024-05-28 15:54:30  INFO 12172 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Started EffectiveExampleApplicationTests in 15.789 seconds (process running for 18.355)
+2024-05-28 15:54:31  INFO 12172 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
+2024-05-28 15:54:33  WARN 12172 --- [effective-example] [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener] to prepare test instance [ru.egorov.effectiveexample.EffectiveExampleApplicationTests@2360c312]
+
+org.mockito.exceptions.base.MockitoException: 
+Cannot mock/spy class java.lang.String
+Mockito cannot mock/spy because :
+ - Cannot mock wrapper types, String.class or Class.class
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.initMocks(MockitoTestExecutionListener.java:88) ~[spring-boot-test-3.2.5.jar:3.2.5]
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:62) ~[spring-boot-test-3.2.5.jar:3.2.5]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260) ~[spring-test-6.1.6.jar:6.1.6]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163) ~[spring-test-6.1.6.jar:6.1.6]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310) ~[na:na]
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735) ~[na:na]
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57) ~[junit5-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55) ~[junit-rt.jar:na]
+
+2024-05-28 15:54:33  INFO 12172 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 15:54:33  INFO 12172 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-28 15:54:33  INFO 12172 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-28 15:57:55  INFO 11660 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Starting EffectiveExampleApplicationTests using Java 17.0.9 with PID 11660 (started by Александр in C:\Users\Александр\IdeaProjects\example-effective)
+2024-05-28 15:57:55  INFO 11660 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-05-28 15:57:58  INFO 11660 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-28 15:57:58  INFO 11660 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 175 ms. Found 5 JPA repository interfaces.
+2024-05-28 15:58:00  INFO 11660 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-05-28 15:58:00  INFO 11660 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-28 15:58:00  INFO 11660 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-28 15:58:01  INFO 11660 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
+2024-05-28 15:58:01  WARN 11660 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-05-28 15:58:01  INFO 11660 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.132s)
+2024-05-28 15:58:01  INFO 11660 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-05-28 15:58:01  INFO 11660 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-28 15:58:01  INFO 11660 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-28 15:58:01  INFO 11660 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-28 15:58:01  INFO 11660 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-28 15:58:02  INFO 11660 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-28 15:58:02  INFO 11660 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-28 15:58:02  INFO 11660 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@26270b77
+2024-05-28 15:58:02  INFO 11660 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-28 15:58:05  INFO 11660 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-28 15:58:05  INFO 11660 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 15:58:05  INFO 11660 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
+2024-05-28 15:58:06  INFO 11660 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-28 15:58:08  WARN 11660 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-28 15:58:09  INFO 11660 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7a2b8501, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b6bcbee, org.springframework.security.web.context.SecurityContextHolderFilter@3dad8926, org.springframework.security.web.header.HeaderWriterFilter@384d0e1f, org.springframework.web.filter.CorsFilter@3532b5d9, org.springframework.security.web.authentication.logout.LogoutFilter@e2bdc58, ru.egorov.effectiveexample.jwt.filter.JwtFilter@5c9168c3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e949007, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7180b25f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77bca6d6, org.springframework.security.web.session.SessionManagementFilter@5f45abe6, org.springframework.security.web.access.ExceptionTranslationFilter@1b856d2a, org.springframework.security.web.access.intercept.AuthorizationFilter@3c0403a]
+2024-05-28 15:58:10  INFO 11660 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Started EffectiveExampleApplicationTests in 15.354 seconds (process running for 19.852)
+2024-05-28 15:58:10  INFO 11660 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
+2024-05-28 15:58:12  INFO 11660 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 15:58:12  INFO 11660 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-28 15:58:12  INFO 11660 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-28 16:17:43  INFO 5164 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Starting EffectiveExampleApplicationTests using Java 17.0.9 with PID 5164 (started by Александр in C:\Users\Александр\IdeaProjects\example-effective)
+2024-05-28 16:17:43  INFO 5164 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-05-28 16:17:45  INFO 5164 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-28 16:17:45  INFO 5164 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 165 ms. Found 5 JPA repository interfaces.
+2024-05-28 16:17:48  INFO 5164 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-05-28 16:17:48  INFO 5164 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-28 16:17:48  INFO 5164 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-28 16:17:48  INFO 5164 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
+2024-05-28 16:17:48  WARN 5164 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-05-28 16:17:48  INFO 5164 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.081s)
+2024-05-28 16:17:48  INFO 5164 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-05-28 16:17:48  INFO 5164 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-28 16:17:48  INFO 5164 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-28 16:17:48  INFO 5164 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-28 16:17:49  INFO 5164 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-28 16:17:49  INFO 5164 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-28 16:17:49  INFO 5164 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-28 16:17:49  INFO 5164 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2efcc0b3
+2024-05-28 16:17:49  INFO 5164 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-28 16:17:52  INFO 5164 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-28 16:17:53  INFO 5164 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:17:53  INFO 5164 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
+2024-05-28 16:17:54  INFO 5164 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-28 16:17:55  WARN 5164 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-28 16:17:56  INFO 5164 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1eb21f22, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e4f42c0, org.springframework.security.web.context.SecurityContextHolderFilter@7c8c2d03, org.springframework.security.web.header.HeaderWriterFilter@32c8df0b, org.springframework.web.filter.CorsFilter@22265a8d, org.springframework.security.web.authentication.logout.LogoutFilter@18fa4822, ru.egorov.effectiveexample.jwt.filter.JwtFilter@436d2bb9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e27ed87, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b811d1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@492939b, org.springframework.security.web.session.SessionManagementFilter@ed110d6, org.springframework.security.web.access.ExceptionTranslationFilter@1b3aa246, org.springframework.security.web.access.intercept.AuthorizationFilter@53466b67]
+2024-05-28 16:17:57  INFO 5164 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Started EffectiveExampleApplicationTests in 15.276 seconds (process running for 18.135)
+2024-05-28 16:17:57  INFO 5164 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
+2024-05-28 16:18:00  INFO 5164 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:18:00  INFO 5164 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-28 16:18:00  INFO 5164 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-28 16:19:01  INFO 11096 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Starting EffectiveExampleApplicationTests using Java 17.0.9 with PID 11096 (started by Александр in C:\Users\Александр\IdeaProjects\example-effective)
+2024-05-28 16:19:01  INFO 11096 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-05-28 16:19:04  INFO 11096 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-28 16:19:04  INFO 11096 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 168 ms. Found 5 JPA repository interfaces.
+2024-05-28 16:19:06  INFO 11096 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-05-28 16:19:06  INFO 11096 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-28 16:19:06  INFO 11096 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-28 16:19:07  INFO 11096 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
+2024-05-28 16:19:07  WARN 11096 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-05-28 16:19:07  INFO 11096 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.087s)
+2024-05-28 16:19:07  INFO 11096 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-05-28 16:19:07  INFO 11096 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-28 16:19:07  INFO 11096 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-28 16:19:07  INFO 11096 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-28 16:19:07  INFO 11096 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-28 16:19:08  INFO 11096 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-28 16:19:08  INFO 11096 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-28 16:19:08  INFO 11096 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4fedf908
+2024-05-28 16:19:08  INFO 11096 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-28 16:19:12  INFO 11096 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-28 16:19:12  INFO 11096 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:19:12  INFO 11096 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
+2024-05-28 16:19:13  INFO 11096 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-28 16:19:15  WARN 11096 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-28 16:19:15  INFO 11096 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6e92aadd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@720bf74d, org.springframework.security.web.context.SecurityContextHolderFilter@7c3b7d7c, org.springframework.security.web.header.HeaderWriterFilter@70b2de98, org.springframework.web.filter.CorsFilter@19146ad8, org.springframework.security.web.authentication.logout.LogoutFilter@3cc3914a, ru.egorov.effectiveexample.jwt.filter.JwtFilter@2cdb53d6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18fa4822, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61906bb1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77e0b681, org.springframework.security.web.session.SessionManagementFilter@7b70596d, org.springframework.security.web.access.ExceptionTranslationFilter@33c9910e, org.springframework.security.web.access.intercept.AuthorizationFilter@736ded17]
+2024-05-28 16:19:17  INFO 11096 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Started EffectiveExampleApplicationTests in 16.747 seconds (process running for 19.43)
+2024-05-28 16:19:17  INFO 11096 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
+2024-05-28 16:19:19  INFO 11096 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:19:19  INFO 11096 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-28 16:19:19  INFO 11096 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-28 16:20:20  INFO 10276 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Starting EffectiveExampleApplicationTests using Java 17.0.9 with PID 10276 (started by Александр in C:\Users\Александр\IdeaProjects\example-effective)
+2024-05-28 16:20:20  INFO 10276 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-05-28 16:20:23  INFO 10276 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-28 16:20:23  INFO 10276 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 5 JPA repository interfaces.
+2024-05-28 16:20:26  INFO 10276 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-05-28 16:20:26  INFO 10276 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-28 16:20:26  INFO 10276 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-28 16:20:26  INFO 10276 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
+2024-05-28 16:20:26  WARN 10276 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-05-28 16:20:26  INFO 10276 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.072s)
+2024-05-28 16:20:26  INFO 10276 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-05-28 16:20:26  INFO 10276 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-28 16:20:27  INFO 10276 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-28 16:20:27  INFO 10276 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-28 16:20:27  INFO 10276 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-28 16:20:27  INFO 10276 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-28 16:20:27  INFO 10276 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-28 16:20:28  INFO 10276 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4fedf908
+2024-05-28 16:20:28  INFO 10276 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-28 16:20:31  INFO 10276 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-28 16:20:31  INFO 10276 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:20:31  INFO 10276 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
+2024-05-28 16:20:34  INFO 10276 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-28 16:20:36  WARN 10276 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-28 16:20:37  INFO 10276 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@cdf3ee2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21c301ab, org.springframework.security.web.context.SecurityContextHolderFilter@4cee91b, org.springframework.security.web.header.HeaderWriterFilter@7ef9c234, org.springframework.web.filter.CorsFilter@1bbbede1, org.springframework.security.web.authentication.logout.LogoutFilter@16433d56, ru.egorov.effectiveexample.jwt.filter.JwtFilter@62ba3045, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@46e03c31, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@24cf1abf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@699d04a9, org.springframework.security.web.session.SessionManagementFilter@33c9910e, org.springframework.security.web.access.ExceptionTranslationFilter@73430c86, org.springframework.security.web.access.intercept.AuthorizationFilter@720bf74d]
+2024-05-28 16:20:38  INFO 10276 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Started EffectiveExampleApplicationTests in 18.589 seconds (process running for 21.246)
+2024-05-28 16:20:38  INFO 10276 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
+2024-05-28 16:20:41  INFO 10276 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:20:41  INFO 10276 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-28 16:20:41  INFO 10276 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-28 16:28:46  INFO 1988 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Starting EffectiveExampleApplicationTests using Java 17.0.9 with PID 1988 (started by Александр in C:\Users\Александр\IdeaProjects\example-effective)
+2024-05-28 16:28:46  INFO 1988 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-05-28 16:28:49  INFO 1988 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-28 16:28:50  INFO 1988 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 489 ms. Found 5 JPA repository interfaces.
+2024-05-28 16:28:52  INFO 1988 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-05-28 16:28:52  INFO 1988 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-28 16:28:52  INFO 1988 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-28 16:28:53  INFO 1988 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
+2024-05-28 16:28:53  WARN 1988 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-05-28 16:28:53  INFO 1988 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.071s)
+2024-05-28 16:28:53  INFO 1988 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-05-28 16:28:53  INFO 1988 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-28 16:28:53  INFO 1988 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-28 16:28:54  INFO 1988 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-28 16:28:54  INFO 1988 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-28 16:28:54  INFO 1988 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-28 16:28:54  INFO 1988 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-28 16:28:55  INFO 1988 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@75805562
+2024-05-28 16:28:55  INFO 1988 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-28 16:28:58  INFO 1988 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-28 16:28:58  INFO 1988 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:28:58  INFO 1988 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
+2024-05-28 16:28:59  INFO 1988 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-28 16:29:01  WARN 1988 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-28 16:29:02  INFO 1988 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77e0b681, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@cdf3ee2, org.springframework.security.web.context.SecurityContextHolderFilter@61906bb1, org.springframework.security.web.header.HeaderWriterFilter@696e9e14, org.springframework.web.filter.CorsFilter@21c301ab, org.springframework.security.web.authentication.logout.LogoutFilter@362aa318, ru.egorov.effectiveexample.jwt.filter.JwtFilter@16257f8c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@c91ced9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46e03c31, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1bbbede1, org.springframework.security.web.session.SessionManagementFilter@7c3b7d7c, org.springframework.security.web.access.ExceptionTranslationFilter@4cee91b, org.springframework.security.web.access.intercept.AuthorizationFilter@6e92aadd]
+2024-05-28 16:29:03  INFO 1988 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Started EffectiveExampleApplicationTests in 17.594 seconds (process running for 20.166)
+2024-05-28 16:29:03  INFO 1988 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
+2024-05-28 16:29:06  INFO 1988 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:29:06  INFO 1988 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-28 16:29:06  INFO 1988 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-28 16:32:59  INFO 8356 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Starting EffectiveExampleApplicationTests using Java 17.0.9 with PID 8356 (started by Александр in C:\Users\Александр\IdeaProjects\example-effective)
+2024-05-28 16:32:59  INFO 8356 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-05-28 16:33:02  INFO 8356 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-28 16:33:03  INFO 8356 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 191 ms. Found 5 JPA repository interfaces.
+2024-05-28 16:33:05  INFO 8356 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-05-28 16:33:05  INFO 8356 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-28 16:33:05  INFO 8356 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-28 16:33:05  INFO 8356 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
+2024-05-28 16:33:05  WARN 8356 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-05-28 16:33:05  INFO 8356 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.074s)
+2024-05-28 16:33:05  INFO 8356 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-05-28 16:33:05  INFO 8356 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-28 16:33:06  INFO 8356 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-28 16:33:06  INFO 8356 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-28 16:33:06  INFO 8356 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-28 16:33:07  INFO 8356 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-28 16:33:07  INFO 8356 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-28 16:33:07  INFO 8356 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@13d984ee
+2024-05-28 16:33:07  INFO 8356 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-28 16:33:11  INFO 8356 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-28 16:33:11  INFO 8356 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:33:11  INFO 8356 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
+2024-05-28 16:33:12  INFO 8356 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-28 16:33:13  WARN 8356 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-28 16:33:14  INFO 8356 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@601e465f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7cb84fb5, org.springframework.security.web.context.SecurityContextHolderFilter@46672a62, org.springframework.security.web.header.HeaderWriterFilter@f4ecbbf, org.springframework.web.filter.CorsFilter@65cfd565, org.springframework.security.web.authentication.logout.LogoutFilter@3f491bd2, ru.egorov.effectiveexample.jwt.filter.JwtFilter@16257f8c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@46e03c31, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4bdc0fb0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3940c41c, org.springframework.security.web.session.SessionManagementFilter@579e8a7, org.springframework.security.web.access.ExceptionTranslationFilter@7b70596d, org.springframework.security.web.access.intercept.AuthorizationFilter@1cc00f56]
+2024-05-28 16:33:15  INFO 8356 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Started EffectiveExampleApplicationTests in 16.826 seconds (process running for 19.566)
+2024-05-28 16:33:16  INFO 8356 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
+2024-05-28 16:33:18  INFO 8356 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:33:18  INFO 8356 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-28 16:33:18  INFO 8356 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-28 16:41:37  INFO 6976 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Starting EffectiveExampleApplicationTests using Java 17.0.9 with PID 6976 (started by Александр in C:\Users\Александр\IdeaProjects\example-effective)
+2024-05-28 16:41:37  INFO 6976 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-05-28 16:41:40  INFO 6976 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-28 16:41:40  INFO 6976 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 164 ms. Found 5 JPA repository interfaces.
+2024-05-28 16:41:42  INFO 6976 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-05-28 16:41:42  INFO 6976 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-28 16:41:42  INFO 6976 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-28 16:41:43  INFO 6976 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
+2024-05-28 16:41:43  WARN 6976 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-05-28 16:41:43  INFO 6976 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.096s)
+2024-05-28 16:41:43  INFO 6976 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-05-28 16:41:43  INFO 6976 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-28 16:41:43  INFO 6976 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-28 16:41:43  INFO 6976 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-28 16:41:43  INFO 6976 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-28 16:41:44  INFO 6976 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-28 16:41:44  INFO 6976 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-28 16:41:44  INFO 6976 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4fedf908
+2024-05-28 16:41:44  INFO 6976 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-28 16:41:47  INFO 6976 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-28 16:41:47  INFO 6976 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:41:47  INFO 6976 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
+2024-05-28 16:41:48  INFO 6976 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-28 16:41:50  WARN 6976 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-28 16:41:50  INFO 6976 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6127ae9e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@601e465f, org.springframework.security.web.context.SecurityContextHolderFilter@1e275478, org.springframework.security.web.header.HeaderWriterFilter@7b70596d, org.springframework.web.filter.CorsFilter@7cb84fb5, org.springframework.security.web.authentication.logout.LogoutFilter@4a244aa3, ru.egorov.effectiveexample.jwt.filter.JwtFilter@62ba3045, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@399dc033, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ffc12a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65cfd565, org.springframework.security.web.session.SessionManagementFilter@24cf1abf, org.springframework.security.web.access.ExceptionTranslationFilter@70b2de98, org.springframework.security.web.access.intercept.AuthorizationFilter@699d04a9]
+2024-05-28 16:41:52  INFO 6976 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Started EffectiveExampleApplicationTests in 15.546 seconds (process running for 18.584)
+2024-05-28 16:41:52  INFO 6976 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
+2024-05-28 16:41:54  INFO 6976 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:41:54  INFO 6976 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-28 16:41:54  INFO 6976 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-28 16:45:15  INFO 9248 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Starting EffectiveExampleApplicationTests using Java 17.0.9 with PID 9248 (started by Александр in C:\Users\Александр\IdeaProjects\example-effective)
+2024-05-28 16:45:15  INFO 9248 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-05-28 16:45:17  INFO 9248 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-28 16:45:18  INFO 9248 --- [effective-example] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 187 ms. Found 5 JPA repository interfaces.
+2024-05-28 16:45:20  INFO 9248 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-05-28 16:45:20  INFO 9248 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-28 16:45:20  INFO 9248 --- [effective-example] [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-28 16:45:20  INFO 9248 --- [effective-example] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/postgresDB (PostgreSQL 16.3)
+2024-05-28 16:45:20  WARN 9248 --- [effective-example] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.3 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-05-28 16:45:20  INFO 9248 --- [effective-example] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.065s)
+2024-05-28 16:45:21  INFO 9248 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2024-05-28 16:45:21  INFO 9248 --- [effective-example] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-28 16:45:21  INFO 9248 --- [effective-example] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-28 16:45:21  INFO 9248 --- [effective-example] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-28 16:45:21  INFO 9248 --- [effective-example] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-28 16:45:22  INFO 9248 --- [effective-example] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-28 16:45:22  INFO 9248 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-28 16:45:22  INFO 9248 --- [effective-example] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@75805562
+2024-05-28 16:45:22  INFO 9248 --- [effective-example] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-28 16:45:25  INFO 9248 --- [effective-example] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-28 16:45:25  INFO 9248 --- [effective-example] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:45:25  INFO 9248 --- [effective-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String ru.egorov.effectiveexample.configuration.SwaggerConfig.devUrl
+2024-05-28 16:45:26  INFO 9248 --- [effective-example] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-28 16:45:27  WARN 9248 --- [effective-example] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-28 16:45:28  INFO 9248 --- [effective-example] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77e0b681, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@cdf3ee2, org.springframework.security.web.context.SecurityContextHolderFilter@61906bb1, org.springframework.security.web.header.HeaderWriterFilter@696e9e14, org.springframework.web.filter.CorsFilter@21c301ab, org.springframework.security.web.authentication.logout.LogoutFilter@362aa318, ru.egorov.effectiveexample.jwt.filter.JwtFilter@16257f8c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@c91ced9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46e03c31, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1bbbede1, org.springframework.security.web.session.SessionManagementFilter@7c3b7d7c, org.springframework.security.web.access.ExceptionTranslationFilter@4cee91b, org.springframework.security.web.access.intercept.AuthorizationFilter@6e92aadd]
+2024-05-28 16:45:29  INFO 9248 --- [effective-example] [main] r.e.e.EffectiveExampleApplicationTests   : Started EffectiveExampleApplicationTests in 15.234 seconds (process running for 17.83)
+2024-05-28 16:45:29  INFO 9248 --- [effective-example] [scheduling-1] r.e.e.service.DepositServiceServiceImp   : Increment balance for user!
+2024-05-28 16:45:32  INFO 9248 --- [effective-example] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-28 16:45:32  INFO 9248 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-28 16:45:32  INFO 9248 --- [effective-example] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
