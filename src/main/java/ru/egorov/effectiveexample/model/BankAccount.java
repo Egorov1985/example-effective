@@ -5,16 +5,16 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
+import java.util.Objects;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Getter
+@Setter
 @Schema(description = "Entity account of bank for user.")
 public class BankAccount implements Serializable {
 
@@ -44,4 +44,17 @@ public class BankAccount implements Serializable {
     @JsonIgnore
     @Schema(description = "User of account", implementation = User.class)
     private User user;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BankAccount that = (BankAccount) o;
+        return Objects.equals(id, that.id) && Objects.equals(deposit, that.deposit) && Objects.equals(startBalance, that.startBalance);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, deposit, startBalance);
+    }
 }

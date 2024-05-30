@@ -4,18 +4,18 @@ package ru.egorov.effectiveexample.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "emails")
 @Schema(description = "Entity for email user.")
+@Getter
+@Setter
 public class Email implements Serializable {
 
     public Email(String email, Boolean isMain) {
@@ -37,4 +37,17 @@ public class Email implements Serializable {
     @JoinColumn(name = "user_id")
     @Schema(description = "User of email", implementation = User.class)
     private User user;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Email email1 = (Email) o;
+        return Objects.equals(id, email1.id) && Objects.equals(email, email1.email) && Objects.equals(isMain, email1.isMain);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, email, isMain);
+    }
 }

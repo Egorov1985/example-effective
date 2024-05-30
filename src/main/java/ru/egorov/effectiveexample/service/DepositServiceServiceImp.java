@@ -32,30 +32,30 @@ public class DepositServiceServiceImp implements DepositService {
 
     @Transactional
     public boolean transferMoneyToUser(String login, String numberPhone, Double depositTransfer) {
-        User userFrom = userRepository.findUserByLogin(login).orElseThrow(()
-                -> new UserNotFoundException("User not found!"));
+        User userFrom = userRepository.findUserByLogin(login).orElseThrow(() -> new UserNotFoundException("Пользователь не найден."));
         BankAccount accountFromTransfer = bankAccountRepository.
-                findById(userFrom.getId()).orElseThrow();
+                findById(userFrom.getId())
+                .orElseThrow(() -> new ResourceException("Проверьте ваш счёт!"));
         BankAccount accountToTransfer = bankAccountRepository.findById(
-                        phoneRepository.getIdFromNumberPhone(numberPhone).orElseThrow(() ->
-                                new UserNotFoundException("Пользователь c указанным номером" +
-                                        "телефона не найден!"))).orElseThrow();
-        if (accountToTransfer.equals(accountFromTransfer)) {
-            throw new ResourceException("Нельзя переводить самому себе!");
-        }
+                        phoneRepository.getIdFromNumberPhone(numberPhone).orElseThrow(() -> new UserNotFoundException("Пользователь c указанным номером телефона не найден!")))
+                .orElseThrow(() -> new ResourceException("У пользователя нет счета в банке!")
+                );
+        if (!accountToTransfer.equals(accountFromTransfer)) {
+            if (depositTransfer <= accountFromTransfer.getDeposit() && depositTransfer != 0) {
+                accountFromTransfer.setDeposit(accountFromTransfer.getDeposit() - depositTransfer);
+                accountToTransfer.setDeposit(accountToTransfer.getDeposit() + depositTransfer);
 
-        if (depositTransfer <= accountFromTransfer.getDeposit() && depositTransfer!= 0) {
-            accountFromTransfer.setDeposit(accountFromTransfer.getDeposit() - depositTransfer);
-            accountToTransfer.setDeposit(accountToTransfer.getDeposit() + depositTransfer);
-
-            bankAccountRepository.save(accountFromTransfer);
-            bankAccountRepository.save(accountToTransfer);
-            logger.info("Пользователь {} успешно перевел пользователю номером телефона {} денежные средтсва в размере {}руб.",
-                    userFrom.getLogin(), numberPhone, depositTransfer);
-            return true;
+                bankAccountRepository.save(accountFromTransfer);
+                bankAccountRepository.save(accountToTransfer);
+                logger.info("Пользователь {} успешно перевел пользователю номером телефона {} денежные средтсва в размере {}руб.",
+                        userFrom.getLogin(), numberPhone, depositTransfer);
+                return true;
+            } else {
+                logger.info("Нельзя перевести больше чем на счету!");
+                throw new ResourceException("Нельзя перевести больше чем на счету!");
+            }
         } else {
-            logger.info("Нельзя первести больше чем на счету!");
-            throw new ResourceException("Нельзя первести больше чем на счету!");
+            throw new ResourceException("Нельзя переводить самому себе!");
         }
     }
 }

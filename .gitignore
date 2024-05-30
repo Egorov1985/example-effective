@@ -4,6 +4,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+/application.log.2024-05-27.0.gz
+/application.log
+
 ### STS ###
 .apt_generated
 .classpath
