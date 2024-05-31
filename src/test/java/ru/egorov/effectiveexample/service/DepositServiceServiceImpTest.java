@@ -35,8 +35,6 @@ class DepositServiceServiceImpTest {
     @Mock
     private User userFrom;
     @Mock
-    private User userTo;
-    @Mock
     private BankAccount bankAccountFrom;
     @Mock
     private BankAccount bankAccountTo;

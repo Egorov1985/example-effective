@@ -19,48 +19,54 @@ import java.util.List;
 public class AppExceptionHandler {
 
     @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<String> handlerUserException(UserNotFoundException e) {
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+    public ResponseEntity<MessageErrorResponse> handlerUserException(UserNotFoundException e) {
+        return new ResponseEntity<>(new MessageErrorResponse(HttpStatus.NOT_FOUND, List.of(e.getMessage())), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(value = {MethodArgumentNotValidException.class})
-    public ResponseEntity<List<String>> handleException(MethodArgumentNotValidException e) {
+    public ResponseEntity<MessageErrorResponse> handleException(MethodArgumentNotValidException e) {
         List<String> errors = e.getBindingResult()
                 .getAllErrors()
                 .stream()
                 .map(DefaultMessageSourceResolvable::getDefaultMessage)
                 .toList();
-        return ResponseEntity.badRequest().body(errors);
+        return ResponseEntity.badRequest().body(new MessageErrorResponse(HttpStatus.BAD_REQUEST, errors));
     }
 
     @ExceptionHandler(value = {ResourceException.class})
-    public ResponseEntity<String> handleResourceException(ResourceException e) {
-        return ResponseEntity.badRequest().body(e.getMessage());
+    public ResponseEntity<MessageErrorResponse> handleResourceException(ResourceException e) {
+        return ResponseEntity.badRequest().body(new MessageErrorResponse(HttpStatus.BAD_REQUEST,
+                List.of(e.getMessage())));
     }
 
     @ExceptionHandler(value = {ConstraintViolationException.class})
-    public ResponseEntity<List<String>> handleResourceConstraintViolation(ConstraintViolationException e)
-    {
+    public ResponseEntity<MessageErrorResponse> handleResourceConstraintViolation(ConstraintViolationException e) {
         List<String> errors = e.getConstraintViolations()
                 .stream()
                 .map(ConstraintViolation::getMessageTemplate)
                 .toList();
-        return ResponseEntity.badRequest().body(errors);
+        return ResponseEntity.badRequest().body(new MessageErrorResponse(HttpStatus.BAD_REQUEST,
+                errors));
     }
 
     @ExceptionHandler(DateTimeParseException.class)
-    public ResponseEntity<String> handleParseDateException(DateTimeParseException e){
-        return ResponseEntity.badRequest().body("Дата должна иметь формат 'ДД.ММ.ГГГГ'.");
+    public ResponseEntity<MessageErrorResponse> handleParseDateException(DateTimeParseException e) {
+        return ResponseEntity.badRequest()
+                .body(new MessageErrorResponse(HttpStatus.BAD_REQUEST,
+                        List.of("Дата должна иметь формат 'ДД.ММ.ГГГГ'.")));
     }
 
     @ExceptionHandler(JwtException.class)
-    public ResponseEntity<String> handleJwtValidException(JwtException e){
-        return ResponseEntity.badRequest().body(e.getMessage());
+    public ResponseEntity<MessageErrorResponse> handleJwtValidException(JwtException e) {
+        return ResponseEntity.badRequest().body(new MessageErrorResponse(
+                HttpStatus.BAD_REQUEST, List.of(e.getMessage())));
     }
 
     @ExceptionHandler(AuthenticationException.class)
-    public ResponseEntity<String> handleAuthenticationException(AuthenticationException e){
-        return ResponseEntity.badRequest().body(e.getMessage());
+    public ResponseEntity<MessageErrorResponse> handleAuthenticationException(AuthenticationException e) {
+        return ResponseEntity.badRequest()
+                .body(new MessageErrorResponse(HttpStatus.BAD_REQUEST,
+                        List.of(e.getMessage())));
     }
 
 
