@@ -1,4 +1,4 @@
-package ru.egorov.effectivitereact.validator;
+package ru.egorov.effectiveexample.validator;
 
 
 import jakarta.validation.Constraint;
@@ -10,7 +10,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import static ru.egorov.effectivitereact.util.Constants.USER_EMAIL_EXIST;
+import static ru.egorov.effectiveexample.util.Constants.USER_EMAIL_EXIST;
 
 
 @Documented

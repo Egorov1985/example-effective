@@ -1,4 +1,4 @@
-package ru.egorov.effectivitereact.util;
+package ru.egorov.effectiveexample.util;
 
 import lombok.experimental.UtilityClass;
 

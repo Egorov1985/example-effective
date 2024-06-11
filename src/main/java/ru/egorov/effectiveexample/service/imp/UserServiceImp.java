@@ -1,4 +1,4 @@
-package ru.egorov.effectivitereact.service.imp;
+package ru.egorov.effectiveexample.service.imp;
 
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -6,19 +6,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Mono;
-import ru.egorov.effectivitereact.dto.*;
-import ru.egorov.effectivitereact.exception.ResourceException;
-import ru.egorov.effectivitereact.exception.UserNotFoundException;
-import ru.egorov.effectivitereact.mappers.UserMappers;
-import ru.egorov.effectivitereact.model.BankAccount;
-import ru.egorov.effectivitereact.model.Email;
-import ru.egorov.effectivitereact.model.Phone;
-import ru.egorov.effectivitereact.model.User;
-import ru.egorov.effectivitereact.repository.BankAccountRepository;
-import ru.egorov.effectivitereact.repository.EmailsRepository;
-import ru.egorov.effectivitereact.repository.PhonesRepository;
-import ru.egorov.effectivitereact.repository.UsersRepository;
-import ru.egorov.effectivitereact.service.UserService;
+import ru.egorov.effectiveexample.dto.*;
+import ru.egorov.effectiveexample.exception.ResourceException;
+import ru.egorov.effectiveexample.exception.UserNotFoundException;
+import ru.egorov.effectiveexample.mappers.UserMappers;
+import ru.egorov.effectiveexample.model.BankAccount;
+import ru.egorov.effectiveexample.model.Email;
+import ru.egorov.effectiveexample.model.Phone;
+import ru.egorov.effectiveexample.model.User;
+import ru.egorov.effectiveexample.repository.BankAccountRepository;
+import ru.egorov.effectiveexample.repository.EmailsRepository;
+import ru.egorov.effectiveexample.repository.PhonesRepository;
+import ru.egorov.effectiveexample.repository.UsersRepository;
+import ru.egorov.effectiveexample.service.UserService;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

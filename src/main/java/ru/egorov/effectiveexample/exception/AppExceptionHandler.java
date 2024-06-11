@@ -1,4 +1,4 @@
-package ru.egorov.effectivitereact.exception;
+package ru.egorov.effectiveexample.exception;
 
 
 import jakarta.validation.ConstraintViolation;

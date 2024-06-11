@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ru.egorov</groupId>
-    <artifactId>effectivite-react</artifactId>
+    <artifactId>example-effective</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>effectivite-react</name>
     <description>effectivite-react</description>

@@ -1,9 +1,9 @@
-package ru.egorov.effectivitereact.mappers;
+package ru.egorov.effectiveexample.mappers;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 import reactor.core.publisher.Mono;
-import ru.egorov.effectivitereact.model.BankAccount;
+import ru.egorov.effectiveexample.model.BankAccount;
 
 @Mapper
 public interface BankAccountMappers {

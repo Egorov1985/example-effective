@@ -1,9 +1,9 @@
-package ru.egorov.effectivitereact.dto;
+package ru.egorov.effectiveexample.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import ru.egorov.effectivitereact.model.BankAccount;
+import ru.egorov.effectiveexample.model.BankAccount;
 
 
 @Data

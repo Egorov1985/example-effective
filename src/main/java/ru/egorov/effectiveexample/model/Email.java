@@ -1,4 +1,4 @@
-package ru.egorov.effectivitereact.model;
+package ru.egorov.effectiveexample.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;

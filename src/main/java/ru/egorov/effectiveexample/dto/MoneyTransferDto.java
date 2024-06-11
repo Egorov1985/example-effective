@@ -1,4 +1,4 @@
-package ru.egorov.effectivitereact.dto;
+package ru.egorov.effectiveexample.dto;
 
 
 import io.swagger.v3.oas.annotations.media.Schema;

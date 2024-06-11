@@ -1,9 +1,9 @@
-package ru.egorov.effectivitereact.validator;
+package ru.egorov.effectiveexample.validator;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
-import ru.egorov.effectivitereact.service.imp.UserServiceImp;
+import ru.egorov.effectiveexample.service.imp.UserServiceImp;
 
 import java.util.concurrent.ExecutionException;
 

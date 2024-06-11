@@ -1,8 +1,8 @@
-package ru.egorov.effectivitereact.repository;
+package ru.egorov.effectiveexample.repository;
 
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import reactor.core.publisher.Mono;
-import ru.egorov.effectivitereact.model.User;
+import ru.egorov.effectiveexample.model.User;
 
 public interface UsersRepository extends ReactiveCrudRepository<User, String> {
 

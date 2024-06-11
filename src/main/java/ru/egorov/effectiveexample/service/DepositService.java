@@ -1,4 +1,4 @@
-package ru.egorov.effectivitereact.service;
+package ru.egorov.effectiveexample.service;
 
 import reactor.core.publisher.Mono;
 

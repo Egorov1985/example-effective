@@ -1,11 +1,7 @@
-package ru.egorov.effectivitereact.service;
+package ru.egorov.effectiveexample.service;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.reactive.function.server.ServerRequest;
-import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
-import ru.egorov.effectivitereact.dto.*;
-import ru.egorov.effectivitereact.model.Phone;
+import ru.egorov.effectiveexample.dto.*;
 
 public interface UserService {
     Mono<UserView> createUser(UserRegistration userRegistration);

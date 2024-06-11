@@ -1,5 +1,4 @@
-package ru.egorov.effectivitereact.controller;
-
+package ru.egorov.effectiveexample.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -15,10 +14,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
-import ru.egorov.effectivitereact.dto.*;
-import ru.egorov.effectivitereact.exception.ResourceException;
-import ru.egorov.effectivitereact.service.imp.UserServiceImp;
-import ru.egorov.effectivitereact.util.Constants;
+import ru.egorov.effectiveexample.dto.*;
+import ru.egorov.effectiveexample.exception.ResourceException;
+import ru.egorov.effectiveexample.service.imp.UserServiceImp;
+import ru.egorov.effectiveexample.util.Constants;
 
 
 @Tag(name = "User Controller", description = "User manager controller!")
@@ -63,7 +62,7 @@ public class UserController {
     )
     @PatchMapping("/add/info")
     public Mono<ResponseEntity<UserView>> addInfoUser(@RequestBody @Valid UserDtoInfo userDtoInfo, String login) {
-        return userService.addUserInfo(userDtoInfo, "login3334")
+        return userService.addUserInfo(userDtoInfo, "login3333")
                 .map(userView -> ResponseEntity.ok().body(userView));
     }
 
@@ -104,7 +103,7 @@ public class UserController {
     )
     @PatchMapping("/add/info/email")
     public Mono<ResponseEntity<String>> addUserAdditionalEmail(//@NonNull Authentication authentication,
-                                                         @RequestBody @Valid EmailDto email) {
+                                                               @RequestBody @Valid EmailDto email) {
         return userService.addOtherEmail(email, "login3333")
                 .map(aBoolean -> {
                     if (aBoolean)

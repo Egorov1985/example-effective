@@ -1,4 +1,4 @@
-package ru.egorov.effectivitereact.repository;
+package ru.egorov.effectiveexample.repository;
 
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 

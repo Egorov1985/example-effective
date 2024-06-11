@@ -1,10 +1,10 @@
-package ru.egorov.effectivitereact.validator;
+package ru.egorov.effectiveexample.validator;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 import java.lang.annotation.*;
 
-import static ru.egorov.effectivitereact.util.Constants.USER_LOGIN_EXIST;
+import static ru.egorov.effectiveexample.util.Constants.USER_LOGIN_EXIST;
 
 @Documented
 @Constraint(validatedBy = {UserLoginExistValidator.class})

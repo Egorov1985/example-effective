@@ -1,12 +1,12 @@
-package ru.egorov.effectivitereact.mappers;
+package ru.egorov.effectiveexample.mappers;
 
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
-import ru.egorov.effectivitereact.dto.UserDtoInfo;
-import ru.egorov.effectivitereact.dto.UserRegistration;
-import ru.egorov.effectivitereact.dto.UserView;
-import ru.egorov.effectivitereact.model.User;
+import ru.egorov.effectiveexample.dto.UserDtoInfo;
+import ru.egorov.effectiveexample.dto.UserRegistration;
+import ru.egorov.effectiveexample.dto.UserView;
+import ru.egorov.effectiveexample.model.User;
 
 @Mapper
 public interface UserMappers {

@@ -1,4 +1,4 @@
-package ru.egorov.effectivitereact.service.imp;
+package ru.egorov.effectiveexample.service.imp;
 
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -7,15 +7,15 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Mono;
-import ru.egorov.effectivitereact.mappers.BankAccountMappers;
-import ru.egorov.effectivitereact.exception.ResourceException;
-import ru.egorov.effectivitereact.exception.UserNotFoundException;
-import ru.egorov.effectivitereact.model.BankAccount;
-import ru.egorov.effectivitereact.model.User;
-import ru.egorov.effectivitereact.repository.BankAccountRepository;
-import ru.egorov.effectivitereact.repository.PhonesRepository;
-import ru.egorov.effectivitereact.repository.UsersRepository;
-import ru.egorov.effectivitereact.service.DepositService;
+import ru.egorov.effectiveexample.exception.ResourceException;
+import ru.egorov.effectiveexample.repository.BankAccountRepository;
+import ru.egorov.effectiveexample.service.DepositService;
+import ru.egorov.effectiveexample.mappers.BankAccountMappers;
+import ru.egorov.effectiveexample.exception.UserNotFoundException;
+import ru.egorov.effectiveexample.model.BankAccount;
+import ru.egorov.effectiveexample.model.User;
+import ru.egorov.effectiveexample.repository.PhonesRepository;
+import ru.egorov.effectiveexample.repository.UsersRepository;
 
 
 @Service

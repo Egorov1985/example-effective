@@ -1,4 +1,4 @@
-package ru.egorov.effectivitereact.exception;
+package ru.egorov.effectiveexample.exception;
 
 
 import jakarta.validation.ConstraintViolation;
@@ -6,10 +6,10 @@ import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Validator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import ru.egorov.effectivitereact.dto.UserRegistration;
-import ru.egorov.effectivitereact.repository.EmailsRepository;
-import ru.egorov.effectivitereact.repository.PhonesRepository;
-import ru.egorov.effectivitereact.repository.UsersRepository;
+import ru.egorov.effectiveexample.dto.UserRegistration;
+import ru.egorov.effectiveexample.repository.EmailsRepository;
+import ru.egorov.effectiveexample.repository.PhonesRepository;
+import ru.egorov.effectiveexample.repository.UsersRepository;
 
 import java.util.HashSet;
 import java.util.Set;

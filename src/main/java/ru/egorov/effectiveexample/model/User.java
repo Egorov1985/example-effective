@@ -1,4 +1,4 @@
-package ru.egorov.effectivitereact.model;
+package ru.egorov.effectiveexample.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.validation.annotation.Validated;
-import ru.egorov.effectivitereact.validator.UserLoginExist;
+import ru.egorov.effectiveexample.validator.UserLoginExist;
 
 import java.time.LocalDate;
 

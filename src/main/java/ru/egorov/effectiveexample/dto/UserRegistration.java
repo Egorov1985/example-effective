@@ -1,4 +1,4 @@
-package ru.egorov.effectivitereact.dto;
+package ru.egorov.effectiveexample.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
@@ -8,10 +8,9 @@ import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.validation.annotation.Validated;
-import ru.egorov.effectivitereact.validator.UserEmailExist;
-import ru.egorov.effectivitereact.validator.UserLoginExist;
-import ru.egorov.effectivitereact.validator.UserPhoneExist;
+import ru.egorov.effectiveexample.validator.UserEmailExist;
+import ru.egorov.effectiveexample.validator.UserLoginExist;
+import ru.egorov.effectiveexample.validator.UserPhoneExist;
 
 
 @Data

@@ -1,11 +1,10 @@
-package ru.egorov.effectivitereact.dto;
+package ru.egorov.effectiveexample.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
-import ru.egorov.effectivitereact.validator.UserPhoneExist;
 
 
 @Getter
