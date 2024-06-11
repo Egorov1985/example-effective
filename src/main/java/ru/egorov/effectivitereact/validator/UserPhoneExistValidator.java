@@ -5,19 +5,28 @@ import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
 import ru.egorov.effectivitereact.service.imp.UserServiceImp;
 
+import java.util.concurrent.ExecutionException;
+
 @RequiredArgsConstructor
 public class UserPhoneExistValidator implements ConstraintValidator<UserPhoneExist, String> {
 
-    private static boolean apply(Boolean aBoolean, boolean b) {
-        b = aBoolean;
-        return b;
-    }
 
     private final UserServiceImp userServiceImp;
+
     @Override
-    public boolean isValid(String phoneNumber, ConstraintValidatorContext constraintValidatorContext) {
-        boolean b = true;
-        userServiceImp.isUserExistByPhoneNumber(phoneNumber).map(aBoolean -> apply(aBoolean, b)).subscribe();
-        return b;
+    public void initialize(UserPhoneExist constraintAnnotation) {
+        ConstraintValidator.super.initialize(constraintAnnotation);
+    }
+
+    @Override
+    public boolean isValid(String number, ConstraintValidatorContext constraintValidatorContext) {
+        try {
+            return userServiceImp.isUserExistByPhoneNumber(number)
+                    .map(aBoolean -> !aBoolean)
+                    .toFuture()
+                    .get();
+        } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -9,7 +9,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.validation.annotation.Validated;
+import ru.egorov.effectivitereact.validator.UserLoginExist;
 
+import java.time.LocalDate;
 
 
 @NoArgsConstructor
@@ -17,6 +20,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @Data
 @Table(name = "users")
 @Schema(description = "Entity for user.")
+@Validated
 public class User {
     @Id
     @Schema(description = "id for entity. Generated UUID random.")
@@ -36,6 +40,7 @@ public class User {
 
     @NotBlank(message = "Введите ваш логин!")
     @Schema(description = "login", example = "Login")
+    @UserLoginExist
     private String login;
 
     @JsonIgnore
@@ -43,16 +48,9 @@ public class User {
     @Schema(description = "password", example = "pass")
     private String password;
 
-    /*@JsonIgnore
+    @JsonIgnore
     @Schema(description = "Birthday", example = "12.02.1987")
     private LocalDate birthday;
-    @Schema(description = "user account of bank", implementation = BankAccount.class)
-    private BankAccount bankAccount;
-
-    @ToString.Exclude
-    @JsonIgnore
-    @Schema(description = "List phone user", implementation = Phone.class)
-    private List<Phone> phones = new ArrayList<>();*/
 
 
 }

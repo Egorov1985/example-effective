@@ -60,12 +60,12 @@ public class DepositServiceImp implements DepositService {
                 bankAccountFrom.setDeposit(bankAccountFrom.getDeposit() - depositTransfer);
                 bankAccountTo.setDeposit(bankAccountTo.getDeposit() + depositTransfer);
 
-                bankAccountRepository.save(bankAccountFrom).doOnSuccess(
+                bankAccountRepository.save(bankAccountFrom).doOnNext(
                         res -> logger.info("С депозита пользователя {} снято {} руб." , login, depositTransfer)
                 );
-                bankAccountRepository.save(bankAccountTo).doOnSuccess(
+                bankAccountRepository.save(bankAccountTo).doOnNext(
                         res -> logger.info("На депозит пользователя {} зачислено {} руб." , numberPhone, depositTransfer)
-                );;
+                );
                 logger.info("Пользователь {} успешно перевел пользователю номером телефона {} денежные средтсва в размере {}руб.",
                         login, numberPhone, depositTransfer);
                 return Mono.fromSupplier(() -> true);

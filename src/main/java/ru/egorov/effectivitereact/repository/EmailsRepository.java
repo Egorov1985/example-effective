@@ -15,5 +15,5 @@ public interface EmailsRepository extends ReactiveCrudRepository<Email, Long> {
     @Query(value = "select user_id from emails where email=:email")
     Mono<String> getIdFromEmail(@Param("email") String email);
 
-    Mono<Boolean> existsEmailsByEmail(String email);
+    Mono<Boolean> existsEmailByEmail(String email);
 }

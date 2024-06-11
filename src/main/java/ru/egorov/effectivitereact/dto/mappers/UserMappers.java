@@ -13,6 +13,7 @@ public interface UserMappers {
     UserMappers INSTANCE = Mappers.getMapper(UserMappers.class);
 
     UserView userView(UserRegistration userRegistration);
-    UserView userAddInfo (UserDtoInfo userDtoInfo);
+    UserView userView (User user);
+    User user(UserDtoInfo userDtoInfo);
 
 }

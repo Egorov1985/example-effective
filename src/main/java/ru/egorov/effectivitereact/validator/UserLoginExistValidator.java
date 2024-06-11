@@ -5,21 +5,23 @@ import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
 import ru.egorov.effectivitereact.service.imp.UserServiceImp;
 
+import java.util.concurrent.ExecutionException;
+
+
 @RequiredArgsConstructor
 public class UserLoginExistValidator implements ConstraintValidator<UserLoginExist, String> {
 
     private final UserServiceImp userServiceImp;
 
-    private static boolean apply(Boolean aBoolean, boolean b) {
-        b = aBoolean;
-        return b;
-    }
-
-
     @Override
-    public boolean isValid(String name, ConstraintValidatorContext constraintValidatorContext) {
-        boolean b = true;
-        userServiceImp.isUserExistByLogin(name).map(aBoolean -> apply(aBoolean, b)).subscribe();
-        return !b;
+    public boolean isValid(String login, ConstraintValidatorContext constraintValidatorContext) {
+        try {
+            return userServiceImp.isUserExistByLogin(login)
+                    .map(aBoolean -> !aBoolean)
+                    .toFuture()
+                    .get();
+        } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

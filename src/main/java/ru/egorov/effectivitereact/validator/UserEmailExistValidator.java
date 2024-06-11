@@ -6,18 +6,24 @@ import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
 import ru.egorov.effectivitereact.service.imp.UserServiceImp;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 
 @RequiredArgsConstructor
 public class UserEmailExistValidator implements ConstraintValidator<UserEmailExist, String> {
 
     private final UserServiceImp userServiceImp;
 
-    private static boolean apply(Boolean aBoolean) {
-        return aBoolean;
-    }
-
     @Override
     public boolean isValid(String email, ConstraintValidatorContext constraintValidatorContext) {
-       return Boolean.TRUE.equals(userServiceImp.isUserExistByEmail(email).block());
+        try {
+            return userServiceImp.isUserExistByEmail(email)
+                    .map(aBoolean -> !aBoolean)
+                    .toFuture()
+                    .get();
+        } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

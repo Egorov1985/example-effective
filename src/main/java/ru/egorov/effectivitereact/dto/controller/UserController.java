@@ -12,18 +12,18 @@ import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
+import org.springframework.boot.autoconfigure.pulsar.PulsarProperties;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
+import ru.egorov.effectivitereact.dto.PhoneDto;
+import ru.egorov.effectivitereact.dto.UserDtoInfo;
 import ru.egorov.effectivitereact.dto.UserRegistration;
 import ru.egorov.effectivitereact.dto.UserView;
+import ru.egorov.effectivitereact.exception.ResourceException;
 import ru.egorov.effectivitereact.service.imp.UserServiceImp;
 import ru.egorov.effectivitereact.util.Constants;
-
-
-import java.util.List;
 
 
 @Tag(name = "User Controller", description = "User manager controller!")
@@ -49,11 +49,12 @@ public class UserController {
             }
     )
     @PostMapping("/registration")
-    public ResponseEntity<Mono<UserView>> createUser(@RequestBody @Valid UserRegistration userRegistration) {
-        return ResponseEntity.ok().body(userService.createUser(userRegistration));
+    public Mono<ResponseEntity<UserView>> createUser(@Valid @RequestBody UserRegistration userRegistration) {
+        return userService.createUser(userRegistration)
+                .map(userView -> ResponseEntity.ok().body(userView));
     }
 
-   /* @Operation(
+    @Operation(
             summary = "Добавление информации пользователи.",
             description = "На вход принимает ФИО пользователя и год его рождения.",
             tags = "patch"
@@ -66,9 +67,11 @@ public class UserController {
             }
     )
     @PatchMapping("/add/info")
-    public ResponseEntity<UserView> addInfoUser(@RequestBody @Valid UserDtoInfo userDtoInfo, @NonNull Authentication authentication) {
-        return ResponseEntity.ok().body(userService.addUserInfo(userDtoInfo, authentication.getPrincipal().toString()));
+    public Mono<ResponseEntity<UserView>> addInfoUser(@RequestBody @Valid UserDtoInfo userDtoInfo, String login) {
+        return userService.addUserInfo(userDtoInfo, "login")
+                .map(userView -> ResponseEntity.ok().body(userView));
     }
+
 
     @Operation(
             summary = "Добавление дополнительного номера телефона пользователя.",
@@ -83,12 +86,15 @@ public class UserController {
             }
     )
     @PatchMapping("/add/info/phone")
-    public ResponseEntity<String> addUserAdditionalPhone(@NonNull Authentication authentication, @RequestBody @Valid PhoneDto phoneDto) {
-        if (userService.addOtherPhone(phoneDto.getPhone(), authentication.getPrincipal().toString())) {
-            return ResponseEntity.ok("Success add new phone.");
-        }
-        return ResponseEntity.badRequest().build();
+    public Mono<ResponseEntity<String>> addUserAdditionalPhone(String login, @RequestBody @Valid PhoneDto phoneDto) {
+        return userService.addOtherPhone("login", phoneDto.getPhone())
+                .map(aBoolean -> {
+                    if (aBoolean)
+                        return ResponseEntity.ok().build();
+                    return ResponseEntity.badRequest().build();
+                });
     }
+    /*
 
     @Operation(
             summary = "Добавление дополнительный электронной почты пользователя.",
