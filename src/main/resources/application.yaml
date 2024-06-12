@@ -1,4 +1,3 @@
-
 spring:
   application:
     name: effective-react
@@ -10,3 +9,19 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+ru:
+  egorov:
+    dev-url: http://localhost:8080/
+springdoc:
+  swagger-ui:
+    path: "/documentation"
+    try-it-out-enabled: true
+  api-docs:
+    path: "/api/docs"
+  packages-to-scan: "ru.egorov.effectiveexample.controller"
+
+logging:
+  pattern:
+    dateformat: "yyyy-MM-dd HH:mm:ss"
+  file:
+    name: application.log

@@ -18,7 +18,6 @@ import java.math.BigInteger;
 @Builder
 public class Token {
     @Id
-    @Column
     private BigInteger id;
     private String login;
     private String token;

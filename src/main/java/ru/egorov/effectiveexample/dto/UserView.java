@@ -10,6 +10,7 @@ import ru.egorov.effectiveexample.model.BankAccount;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Schema(description = "User view for controller")
 public class UserView {
+
     @Schema(description = "login", example = "Login")
     private String login;
 

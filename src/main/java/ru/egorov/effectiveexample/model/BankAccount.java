@@ -31,12 +31,10 @@ public class BankAccount  {
     @Column("deposit")
     @PositiveOrZero(message = "Баланс не может быть отрицательным.")
     @NotNull(message ="Депозит не может быть нулевым!")
-    @Schema(description = "Start deposit", example = "1000.00")
     private Double deposit;
 
     @Column("start_balance")
     @JsonIgnore
-    @Schema(description = "Start balance for increment start deposit", example = "1000.00")
     private Double startBalance;
 
 }

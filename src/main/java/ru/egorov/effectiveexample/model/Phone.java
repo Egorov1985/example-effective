@@ -26,13 +26,10 @@ public class Phone  {
     }
 
     @Id
-    @Schema(description = "id for entity. Generated IDENTITY.")
     private Long id;
 
-    @Schema(description = "Phone number", example = "9298887766")
     private String number;
 
-    @Schema(description = "The index is the main phone or not", example = "true")
     private Boolean isMain;
 
     @Column("user_id")

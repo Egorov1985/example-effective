@@ -23,33 +23,26 @@ import java.time.LocalDate;
 @Validated
 public class User {
     @Id
-    @Schema(description = "id for entity. Generated UUID random.")
     private String id;
 
     @JsonIgnore
-    @Schema(description = "User first name", example = "Александр")
     private String firstName;
 
     @JsonIgnore
-    @Schema(description = "User middle name", example = "Николавеич")
     private String middleName;
 
     @JsonIgnore
-    @Schema(description = "User last name", example = "Егоров")
     private String lastName;
 
     @NotBlank(message = "Введите ваш логин!")
-    @Schema(description = "login", example = "Login")
     @UserLoginExist
     private String login;
 
     @JsonIgnore
     @NotBlank(message = "Пароль не может быть пустым")
-    @Schema(description = "password", example = "pass")
     private String password;
 
     @JsonIgnore
-    @Schema(description = "Birthday", example = "12.02.1987")
     private LocalDate birthday;
 
 

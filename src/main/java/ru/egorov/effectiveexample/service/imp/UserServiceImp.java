@@ -100,13 +100,35 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public Mono<Boolean> deletePhone(String phoneNumber, String login) {
-        return null;
+    public Mono<Boolean> deletePhone(PhoneDto phone, String login) {
+        return userRepository.findUsersByLogin(login)
+                .flatMap(user -> phonesRepository.countPhoneByUserId(user.getId())
+                        .flatMap(count ->
+                                phonesRepository.existsPhonesByNumber(phone.getPhone())
+                                        .flatMap(aBoolean -> {
+                                            if (!aBoolean)
+                                                return Mono.just(false);
+                                            if (count == 1)
+                                                return Mono.error(new ResourceException("Нельзя удалить последний номер телефона для аккаунта!"));
+                                            return phonesRepository.deletePhoneByNumber(phone.getPhone()).flatMap(v -> Mono.just(true));
+                                        })
+                        ));
     }
 
     @Override
-    public Mono<Boolean> deleteEmail(String email, String login) {
-        return null;
+    public Mono<Boolean> deleteEmail(EmailDto email, String login) {
+        return userRepository.findUsersByLogin(login)
+                .flatMap(user -> emailRepository.countEmailsByUserId(user.getId())
+                        .flatMap(count ->
+                                emailRepository.existsEmailByEmail(email.getEmail())
+                                        .flatMap(aBoolean -> {
+                                            if (!aBoolean)
+                                                return Mono.just(false);
+                                            if (count == 1)
+                                                return Mono.error(new ResourceException("Нельзя удалить последний электронный адрес для аккаунта!"));
+                                            return emailRepository.deleteEmailsByEmail(email.getEmail()).flatMap(v -> Mono.just(true));
+                                        })
+                        ));
     }
 
     @Override

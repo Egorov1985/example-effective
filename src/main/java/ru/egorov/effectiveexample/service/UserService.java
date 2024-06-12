@@ -2,6 +2,8 @@ package ru.egorov.effectiveexample.service;
 
 import reactor.core.publisher.Mono;
 import ru.egorov.effectiveexample.dto.*;
+import ru.egorov.effectiveexample.model.Email;
+import ru.egorov.effectiveexample.model.Phone;
 
 public interface UserService {
     Mono<UserView> createUser(UserRegistration userRegistration);
@@ -12,9 +14,9 @@ public interface UserService {
 
     Mono<Boolean> addOtherEmail(EmailDto email, String login);
 
-    Mono<Boolean> deletePhone(String phoneNumber, String login);
+    Mono<Boolean> deletePhone(PhoneDto phone, String login);
 
-    Mono<Boolean> deleteEmail(String email, String login);
+    Mono<Boolean> deleteEmail(EmailDto email, String login);
 
     Mono<UserView> searchUser(String search);
 
