@@ -5,23 +5,21 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.support.WebExchangeBindException;
 import reactor.core.publisher.Mono;
 import ru.egorov.effectiveexample.dto.*;
 import ru.egorov.effectiveexample.exception.ResourceException;
 import ru.egorov.effectiveexample.exception.UserNotFoundException;
-import ru.egorov.effectiveexample.util.Constants;
 
 import java.util.List;
 
 @Tag(name = "User Controller", description = "User manager controller!")
-@SecurityRequirement(name = Constants.SECURITY_SWAGGER)
 public interface UserSwaggerController {
 
     @Operation(
@@ -33,7 +31,7 @@ public interface UserSwaggerController {
     @ApiResponses(
             {
                     @ApiResponse(responseCode = "200", content = {@Content(schema = @Schema(implementation = UserView.class), mediaType = MediaType.APPLICATION_JSON_VALUE)}),
-                    @ApiResponse(responseCode = "400", content = {@Content(schema = @Schema(implementation = ConstraintViolationException.class),
+                    @ApiResponse(responseCode = "400", content = {@Content(schema = @Schema(implementation = WebExchangeBindException.class),
                             mediaType = MediaType.APPLICATION_JSON_VALUE)})
             }
     )
@@ -52,7 +50,7 @@ public interface UserSwaggerController {
                             mediaType = MediaType.APPLICATION_JSON_VALUE)})
             }
     )
-    Mono<ResponseEntity<UserView>> addInfoUser(UserDtoInfo userDtoInfo, String login);
+    Mono<ResponseEntity<UserView>> addInfoUser(@RequestBody UserDtoInfo userDtoInfo, String login);
 
 
     @Operation(
