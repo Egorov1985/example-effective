@@ -1,16 +1,36 @@
-2024-06-13 16:29:58  INFO 9056 --- [effective-react] [main] ru.egorov.EffectiveExampleApplication    : Starting EffectiveExampleApplication using Java 17.0.9 with PID 9056 (C:\Users\Александр\IdeaProjects\example-effective\target\classes started by Александр in C:\Users\Александр\IdeaProjects\example-effective)
-2024-06-13 16:29:58  INFO 9056 --- [effective-react] [main] ru.egorov.EffectiveExampleApplication    : No active profile set, falling back to 1 default profile: "default"
-2024-06-13 16:29:59  INFO 9056 --- [effective-react] [main] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file 'C:\Users\Александр\IdeaProjects\example-effective\compose.yaml'
-2024-06-13 16:30:02  INFO 9056 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Created
-2024-06-13 16:30:02  INFO 9056 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Starting
-2024-06-13 16:30:03  INFO 9056 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Started
-2024-06-13 16:30:03  INFO 9056 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Waiting
-2024-06-13 16:30:03  INFO 9056 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Healthy
-2024-06-13 16:30:05  INFO 9056 --- [effective-react] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
-2024-06-13 16:30:06  INFO 9056 --- [effective-react] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 259 ms. Found 5 R2DBC repository interfaces.
-2024-06-13 16:30:09  INFO 9056 --- [effective-react] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
-2024-06-13 16:30:09  INFO 9056 --- [effective-react] [main] ru.egorov.EffectiveExampleApplication    : Started EffectiveExampleApplication in 13.113 seconds (process running for 16.46)
-2024-06-13 16:30:30  INFO 9056 --- [effective-react] [reactor-tcp-nio-3] r.e.e.service.imp.UserServiceImp         : Create new User with login33334!
-2024-06-13 16:30:30  INFO 9056 --- [effective-react] [reactor-tcp-nio-4] r.e.e.service.imp.UserServiceImp         : Save email '1177@mail.ru' for user login33334
-2024-06-13 16:30:30  INFO 9056 --- [effective-react] [reactor-tcp-nio-4] r.e.e.service.imp.UserServiceImp         : Save phone '9113345566' for user login33334
-2024-06-13 16:30:30  INFO 9056 --- [effective-react] [reactor-tcp-nio-4] r.e.e.service.imp.UserServiceImp         : Save bankAccount for user login33334
+2024-06-17 20:47:28  INFO 11212 --- [effective-react] [main] ru.egorov.EffectiveExampleApplication    : Starting EffectiveExampleApplication using Java 21.0.1 with PID 11212 (C:\Users\saneg\IdeaProjects\example-effective\target\classes started by saneg in C:\Users\saneg\IdeaProjects\example-effective)
+2024-06-17 20:47:28  INFO 11212 --- [effective-react] [main] ru.egorov.EffectiveExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-06-17 20:47:29  INFO 11212 --- [effective-react] [main] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file 'C:\Users\saneg\IdeaProjects\example-effective\compose.yaml'
+2024-06-17 20:47:33  INFO 11212 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Created
+2024-06-17 20:47:33  INFO 11212 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Starting
+2024-06-17 20:47:34  INFO 11212 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Started
+2024-06-17 20:47:34  INFO 11212 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Waiting
+2024-06-17 20:47:35  INFO 11212 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Healthy
+2024-06-17 20:47:38  INFO 11212 --- [effective-react] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-17 20:47:38  INFO 11212 --- [effective-react] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 276 ms. Found 5 R2DBC repository interfaces.
+2024-06-17 20:47:41  INFO 11212 --- [effective-react] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
+2024-06-17 20:47:41  INFO 11212 --- [effective-react] [main] ru.egorov.EffectiveExampleApplication    : Started EffectiveExampleApplication in 13.119 seconds (process running for 15.167)
+2024-06-17 20:53:41  INFO 12084 --- [effective-react] [main] ru.egorov.EffectiveExampleApplication    : Starting EffectiveExampleApplication using Java 21.0.1 with PID 12084 (C:\Users\saneg\IdeaProjects\example-effective\target\classes started by saneg in C:\Users\saneg\IdeaProjects\example-effective)
+2024-06-17 20:53:41  INFO 12084 --- [effective-react] [main] ru.egorov.EffectiveExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-06-17 20:53:41  INFO 12084 --- [effective-react] [main] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file 'C:\Users\saneg\IdeaProjects\example-effective\compose.yaml'
+2024-06-17 20:53:45  INFO 12084 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Created
+2024-06-17 20:53:45  INFO 12084 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Starting
+2024-06-17 20:53:45  INFO 12084 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Started
+2024-06-17 20:53:45  INFO 12084 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Waiting
+2024-06-17 20:53:46  INFO 12084 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Healthy
+2024-06-17 20:53:48  INFO 12084 --- [effective-react] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-17 20:53:48  INFO 12084 --- [effective-react] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 252 ms. Found 5 R2DBC repository interfaces.
+2024-06-17 20:53:51  INFO 12084 --- [effective-react] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
+2024-06-17 20:53:51  INFO 12084 --- [effective-react] [main] ru.egorov.EffectiveExampleApplication    : Started EffectiveExampleApplication in 10.967 seconds (process running for 12.342)
+2024-06-17 20:57:06  INFO 14276 --- [effective-react] [main] ru.egorov.EffectiveExampleApplication    : Starting EffectiveExampleApplication using Java 21.0.1 with PID 14276 (C:\Users\saneg\IdeaProjects\example-effective\target\classes started by saneg in C:\Users\saneg\IdeaProjects\example-effective)
+2024-06-17 20:57:06  INFO 14276 --- [effective-react] [main] ru.egorov.EffectiveExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-06-17 20:57:06  INFO 14276 --- [effective-react] [main] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file 'C:\Users\saneg\IdeaProjects\example-effective\compose.yaml'
+2024-06-17 20:57:10  INFO 14276 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Created
+2024-06-17 20:57:10  INFO 14276 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Starting
+2024-06-17 20:57:10  INFO 14276 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Started
+2024-06-17 20:57:10  INFO 14276 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Waiting
+2024-06-17 20:57:11  INFO 14276 --- [effective-react] [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container postgres-react  Healthy
+2024-06-17 20:57:13  INFO 14276 --- [effective-react] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-17 20:57:14  INFO 14276 --- [effective-react] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 269 ms. Found 5 R2DBC repository interfaces.
+2024-06-17 20:57:16  INFO 14276 --- [effective-react] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
+2024-06-17 20:57:16  INFO 14276 --- [effective-react] [main] ru.egorov.EffectiveExampleApplication    : Started EffectiveExampleApplication in 11.267 seconds (process running for 12.677)

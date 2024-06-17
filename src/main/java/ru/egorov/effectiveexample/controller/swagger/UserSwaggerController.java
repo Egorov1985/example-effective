@@ -1,4 +1,4 @@
-package ru.egorov.effectiveexample.swagger;
+package ru.egorov.effectiveexample.controller.swagger;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.support.WebExchangeBindException;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import ru.egorov.effectiveexample.dto.*;
 import ru.egorov.effectiveexample.exception.ResourceException;
@@ -50,7 +51,7 @@ public interface UserSwaggerController {
                             mediaType = MediaType.APPLICATION_JSON_VALUE)})
             }
     )
-    Mono<ResponseEntity<UserView>> addInfoUser(@RequestBody UserDtoInfo userDtoInfo, String login);
+    Mono<ResponseEntity<UserView>> addInfoUser(@RequestBody UserDto userDto, String login);
 
 
     @Operation(
@@ -132,5 +133,5 @@ public interface UserSwaggerController {
             }
     )
     @GetMapping("/action/search")
-    Mono<ResponseEntity<List<UserView>>> getUsers(String search);
+    Mono<ResponseEntity<Flux<UserView>>> getUsers(UserRequest request);
 }

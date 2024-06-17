@@ -2,28 +2,29 @@ package ru.egorov.effectiveexample.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Data
 @Schema(description = "Dto for add information for user.")
-
-public class UserDtoInfo {
+public class UserDto {
 
     @NotNull(message = "{message.firstName}")
     @Schema(description = "User first name", example ="Александр")
-    private String firstName;
+    protected String firstName;
 
     @NotNull(message = "{message.middleName}")
     @Schema(description = "User middle name", example ="Николавеич")
-    private String middleName;
+    protected String middleName;
 
     @NotNull(message = "{message.lastName}")
     @Schema(description = "User last name", example ="Егоров")
-    private String lastName;
+    protected String lastName;
 
     @NotNull(message = "{message.birthday}")
     @Schema(description = "Birthday", example ="12.02.1987")
-    private String birthday;
+    protected String birthday;
 
 }

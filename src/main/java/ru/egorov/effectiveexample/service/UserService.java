@@ -1,14 +1,13 @@
 package ru.egorov.effectiveexample.service;
 
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import ru.egorov.effectiveexample.dto.*;
-import ru.egorov.effectiveexample.model.Email;
-import ru.egorov.effectiveexample.model.Phone;
 
 public interface UserService {
     Mono<UserView> createUser(UserRegistration userRegistration);
 
-    Mono<UserView> addUserInfo(UserDtoInfo userDtoInfo, String login);
+    Mono<UserView> addUserInfo(UserDto userDto, String login);
 
     Mono<Boolean> addOtherPhone(PhoneDto phone, String login);
 
@@ -18,7 +17,7 @@ public interface UserService {
 
     Mono<Boolean> deleteEmail(EmailDto email, String login);
 
-    Mono<UserView> searchUser(String search);
+    Flux<UserView> searchUser(UserRequest request);
 
     Mono<Boolean> isUserExistByLogin(String username);
 

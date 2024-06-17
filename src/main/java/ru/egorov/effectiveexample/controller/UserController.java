@@ -5,12 +5,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import ru.egorov.effectiveexample.dto.*;
 import ru.egorov.effectiveexample.service.imp.UserServiceImp;
-import ru.egorov.effectiveexample.swagger.UserSwaggerController;
-
-import java.util.List;
+import ru.egorov.effectiveexample.controller.swagger.UserSwaggerController;
 
 
 @RestController
@@ -29,8 +28,8 @@ public class UserController implements UserSwaggerController {
 
 
     @PatchMapping("/add/info")
-    public Mono<ResponseEntity<UserView>> addInfoUser(@RequestBody @Valid UserDtoInfo userDtoInfo, String login) {
-        return userService.addUserInfo(userDtoInfo, "login3333")
+    public Mono<ResponseEntity<UserView>> addInfoUser(@RequestBody @Valid UserDto userDto, String login) {
+        return userService.addUserInfo(userDto, "login3333")
                 .map(userView -> ResponseEntity.ok().body(userView));
     }
 
@@ -85,9 +84,12 @@ public class UserController implements UserSwaggerController {
                 });
 
     }
+
+    @GetMapping("/search")
     @Override
-    public Mono<ResponseEntity<List<UserView>>> getUsers(String search) {
-        return null;
+    public Mono<ResponseEntity<Flux<UserView>>> getUsers(UserRequest request) {
+        return Mono.just(ResponseEntity.ok(userService.searchUser(request)));
+
     }
 
 }

@@ -3,8 +3,11 @@ package ru.egorov.effectiveexample.service.imp;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import ru.egorov.effectiveexample.dto.*;
 import ru.egorov.effectiveexample.exception.ResourceException;
@@ -48,16 +51,16 @@ public class UserServiceImp implements UserService {
 
 
     @Override
-    public Mono<UserView> addUserInfo(UserDtoInfo userDtoInfo, String login) {
+    public Mono<UserView> addUserInfo(UserDto userDto, String login) {
         return userRepository.findUsersByLogin(login)
                 .flatMap(user -> {
                     if (user.getFirstName() != null && user.getMiddleName() != null &&
                             user.getLastName() != null && user.getBirthday() != null)
                         return Mono.error(new ResourceException("Информация о пользователи уже добавлена!"));
-                    user.setFirstName(userDtoInfo.getFirstName());
-                    user.setLastName(userDtoInfo.getLastName());
-                    user.setMiddleName(userDtoInfo.getMiddleName());
-                    user.setBirthday(LocalDate.parse(userDtoInfo.getBirthday(), DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+                    user.setFirstName(userDto.getFirstName());
+                    user.setLastName(userDto.getLastName());
+                    user.setMiddleName(userDto.getMiddleName());
+                    user.setBirthday(LocalDate.parse(userDto.getBirthday(), DateTimeFormatter.ofPattern("dd.MM.yyyy")));
                     return userRepository.save(user);
                 })
                 .doOnError(e -> logger.info("Повторная попытка добавления информации о пользователе."))
@@ -132,8 +135,20 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public Mono<UserView> searchUser(String search) {
-        return null;
+    public Flux<UserView> searchUser(UserRequest request) {
+
+        if (request.getBirthday()!=null)
+            return userRepository.findByBirthdayLessThan(LocalDate.parse(request.getBirthday(), DateTimeFormatter.ofPattern("yyyy-MM-dd")))
+                    .map(UserMappers.INSTANCE::userView);
+        if (request.getEmail()!=null)
+            return emailRepository.getIdFromEmail(request.getEmail()).flatMap(userRepository::findById)
+                    .map(UserMappers.INSTANCE::userView).flux();
+        if (request.getPhone()!=null)
+            return phonesRepository.getUserIdFrom(request.getPhone()).flatMap(userRepository::findById)
+                    .map(UserMappers.INSTANCE::userView).flux();
+        return userRepository.findAll(Example.of(UserMappers.INSTANCE.user(request),
+                ExampleMatcher.matchingAll().withIgnoreCase(true).withIgnoreNullValues())).map(UserMappers.INSTANCE::userView);
+
     }
 
     @Override

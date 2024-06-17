@@ -2,6 +2,7 @@ package ru.egorov.effectiveexample.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.querydsl.core.Query;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -21,7 +22,7 @@ import java.time.LocalDate;
 @Table(name = "users")
 @Schema(description = "Entity for user.")
 @Validated
-public class User {
+public class User  {
     @Id
     private String id;
 
