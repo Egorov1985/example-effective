@@ -7,11 +7,14 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication(exclude = {UserDetailsServiceAutoConfiguration.class})
 @EnableScheduling
-public class EffectiveExampleApplication {
+public class EffectiveExampleApplication   {
+
+
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(EffectiveExampleApplication.class, args);
 	}
+
+
 
 }

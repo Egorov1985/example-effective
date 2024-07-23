@@ -1,12 +1,12 @@
-create sequence tokens_seq start with 1 increment by 50;
-create table bank_account
+create sequence if not exists tokens_seq  start with 1 increment by 50;
+create table if not exists bank_account
 (
     deposit       float(53)    not null,
     start_balance float(53)    not null,
     user_id       varchar(255) not null,
     primary key (user_id)
 );
-create table emails
+create table if not exists emails
 (
     is_main boolean,
     id      bigserial not null,
@@ -15,7 +15,7 @@ create table emails
     primary key (id)
 );
 
-create table phones
+create table if not exists phones
 (
     is_main boolean,
     id       bigserial not null,
@@ -23,7 +23,7 @@ create table phones
     user_id varchar(255),
     primary key (id)
 );
-create table tokens
+create table if not exists tokens
 (
     id        numeric(38, 0) not null,
     is_active boolean        not null,
@@ -31,7 +31,7 @@ create table tokens
     token     varchar(255),
     primary key (id)
 );
-create table users
+create table if not exists users
 (
     birthday    date,
     first_name  varchar(255),
